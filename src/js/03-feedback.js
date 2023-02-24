@@ -19,7 +19,7 @@ function onInputChange(e) {
   };
 
   saveData(formData);
-  // console.log(localStorage);
+  console.log(localStorage);
 }
 
 function onFormSubmit(e) {
@@ -46,7 +46,8 @@ function loadData(key) {
   try {
     return (data = JSON.parse(localStorage.getItem(key)) || {});
   } catch (error) {
-    console.error('Get state error: ', error.message);
+    // console.error('Get state error: ', error.message);
+    return {};
   }
 }
 
