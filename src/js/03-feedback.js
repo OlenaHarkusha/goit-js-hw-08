@@ -44,10 +44,10 @@ function saveData(data) {
 
 function loadData(key) {
   try {
-    return (data = JSON.parse(localStorage.getItem(key)) || {});
+    const getKey = localStorage.getItem(key);
+    return getKey === null ? undefined : JSON.parse(getKey);
   } catch (error) {
     console.error('Get state error: ', error.message);
-    return {};
   }
 }
 
