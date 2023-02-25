@@ -34,8 +34,8 @@ function onFormSubmit(e) {
 
 function localStorageCheck() {
   const loadedData = loadData(LOCALSTORAGE_KEY);
-  email.value = loadedData.email || null;
-  message.value = loadedData.message || null;
+  email.value = loadedData.email || '';
+  message.value = loadedData.message || '';
 }
 
 function saveData(data) {
@@ -46,7 +46,7 @@ function loadData(key) {
   try {
     return (data = JSON.parse(localStorage.getItem(key)) || {});
   } catch (error) {
-    // console.error('Get state error: ', error.message);
+    console.error('Get state error: ', error.message);
     return {};
   }
 }
