@@ -34,8 +34,10 @@ function onFormSubmit(e) {
 
 function localStorageCheck() {
   const loadedData = loadData(LOCALSTORAGE_KEY);
-  email.value = loadedData.email || '';
-  message.value = loadedData.message || '';
+  if (loadedData) {
+    email.value = loadedData.email;
+    message.value = loadedData.message;
+  }
 }
 
 function saveData(data) {

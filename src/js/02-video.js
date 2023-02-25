@@ -23,4 +23,8 @@ function getCurrentTime() {
   }
 }
 
-player.setCurrentTime(getCurrentTime());
+const playerStopTime = getCurrentTime();
+
+playerStopTime
+  ? player.setCurrentTime(playerStopTime)
+  : player.setCurrentTime(0);
